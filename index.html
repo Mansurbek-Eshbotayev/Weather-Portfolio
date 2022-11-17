@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/globus.css">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/search.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <title>Document</title>
+</head>
+<body>
+  
+  <header class="header pt-3 position-fixed w-100" id="hed">
+    <div class="container d-flex justify-content-between">
+      <a href="./index.html">
+        <img class="map__logo" src="./images/logo.png" alt="site-logo">
+      </a>
+      
+    </div>
+  </header>
+  
+  <main class="site-main">
+    
+    <section class="map-section">
+      <div class="container__map">
+        <div id="chartdiv"></div>
+      </div>
+    </section>
+    
+    
+    <section class="weather pt-5">
+      
+      <div class="container">
+        <div class="mapping w-100">
+          <div class="inner text-center mb-5">
+            <div class="wr text-center d-flex justify-content-center">
+              <div class="search-wrapper">
+                <div id="searchBox">
+                  <form class="our__form" method="POST" autocomplete="off">
+                    <input class="bubble form__input text-primary fw-bold" type="text" name="search" id="searcInput">
+                    <button class="form__btn" type="submit">bos</button>
+                  </form>
+                  <div class="bubble"><p class="S" style="color: #4C83F0;">S</p></div>
+                  <div class="bubble" style="left: 50px;"><p style="color: #D1333B;">E</p></div>
+                  <div class="bubble" style="left: 100px;"><p style="color: #EEB80B;">A</p></div>
+                  <div class="bubble" style="left: 150px;"><p style="color: #4C83F0;">R</p></div>
+                  <div class="bubble" style="left: 200px;"><p style="color: #1CAF60;">C</p></div>
+                  <div class="bubble" style="left: 250px;"><p style="color: #D1333B;">H</p></div>
+                  <div class="bubble" style="left: 300px;"><p>🔎</p></div>
+                </div>
+                
+              </div>
+            </div>
+            <svg class="ma__img" xmlns="http://www.w3.org/2000/svg" version="1.1">
+              <defs>
+                <filter id="goo">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                  <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+                  <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+                </filter>
+              </defs>
+            </svg>
+          </div>
+          
+          <div class="d-flex align-items-center justify-content-end">
+            <div class="info me-5 ">
+              <div class="little__info p-4 w-100 h-100" >
+                <h2 class="info__title text-center h2 fw-bold"></h2>
+                <div class="d-flex justify-content-between fs-2 mt-5 px-3">
+                  <div class="d-flex flex-column">
+                    <span class="dagre"><span class="degre__name"></span></span>
+                    <span class="dagre__temp mb-1"></span>
+                    <img class="dagre__icon" src="" alt="">
+                    <a class="imfo__location fs-3 text-decoration-none text-primary" href="" target="blank">
+                      <img class="map__log" src="./images/map_loc.png" alt="map">
+                    </a>
+                  </div>
+                  
+                  <div class="info__flag">
+                    <p class=" mt-0">  <span class="logo__count text-dark"> </span></p>
+                    <img class="map__img img-fluid" src="" alt="">
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            <div class="wrap__globus" >
+              <div id="worldmap"></div>
+              <p class="text-center fs-4" id="globesarecool">Search the globe !</p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+    
+  </main>
+  
+  <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script src="https://d3js.org/topojson.v1.min.js"></script>
+  <script src="./js/globus.js"></script>
+  <!-- Resources -->
+  <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <script src="./js/search.js"></script>
+  <script src="./js/map.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+</html>
